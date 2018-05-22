@@ -19,16 +19,22 @@
 // keyword const vs let [lihat penjelasan di atas]
 
 // 2. Data type
-const name = "yudi"; // string data
-const age = 17; // integer
-const nomimal = 20.5; // double
-const ishandsome = true; // boolean -- hanya bisa true or false
+const nama = "Damz"; // String
+const umur = 17; // integer
+const nominal = 20.5; // double
+const isHandsome = true; // boolean - true / false
 const cars = ["honda", "toyota", "mitsubishi"]; // array
-const angkas = [1, 2, 3, 4]; // array of number
+const angkas = [1, 2, 3, 4]; // array of numnber
 const info = {
-  address: "blablaba",
-  city: "blablaba,"
-}; // object
+  address: "Jl. Semangka",
+  city: "Jakarta",
+  zip_code: "65213"
+}; // Object
+console.log(nama);
+console.log(nama + " umur saya: " + umur);
+console.log(cars[1]); // array always has index
+console.log(info.city + " " + info.zip_code);
+// object
 // untuk data tipe objek bisa terdiri dari beberapa properties yang dimana 1 properties tersusun dari Key - value pairs
 
 // unutk menampilkan data 
