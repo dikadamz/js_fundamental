@@ -53,8 +53,8 @@ const hitungOngkir = city => {
 };
 
 const hitungDiskon = (harga, category) => {
- 
   let hargaDenganDiskon;
+
   if (category === "Fashion") {
     hargaDenganDiskon = harga * 0.4;
   } else if (category === "Games") {
@@ -62,7 +62,7 @@ const hitungDiskon = (harga, category) => {
   } else if (category === "Sport") {
     hargaDenganDiskon = harga * 0.25;
   } else {
-    hargaDenganDiskon = harga * 0.5;
+    hargaDenganDiskon = harga * 0.05;
   }
 
   return hargaDenganDiskon;
