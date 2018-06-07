@@ -54,10 +54,22 @@ const hitungOngkir = city => {
   return ongkir;
 };
 
-const hitungDiskon = harga => {
-  // 10%
-  const hargaWithDiskon = harga * 0.1;
-  return hargaWithDiskon;
+const hitungDiskon = (harga, category) => {
+  // Fashion diskon 40%, Games diskon 15%, Sport diskon 25%
+  // selain itu diskon 5%
+  let hargaDenganDiskon;
+
+  if (category === "Fashion") {
+    hargaDenganDiskon = harga * 0.4;
+  } else if (category === "Games") {
+    hargaDenganDiskon = harga * 0.15;
+  } else if (category === "Sport") {
+    hargaDenganDiskon = harga * 0.25;
+  } else {
+    hargaDenganDiskon = harga * 0.5;
+  }
+
+  return hargaDenganDiskon;
 };
 
 const hitungTotalHargaBarang = (
@@ -74,15 +86,21 @@ dataBarang.map((item, idx) => {
   const namaBarang = item.name;
   const priceBarang = item.price;
   const priceCity = item.city;
+  const kategori = item.category;
 
-const pajakSaja = hitungPajak(priceBarang);
-const diskonSaja = hitungDiskon(priceBarang);
-const ongkirSaja = hitungOngkir(priceCity);
-const totalHargaBarang = hitungTotalHargaBarang(
-  priceBarang,
-  pajakSaja,
-  ongkirSaja,
-  diskonSaja)
+  const pajakSaja = hitungPajak(priceBarang);
+  const diskonSaja = hitungDiskon(priceBarang, kategori);
+  const ongkirSaja = hitungOngkir(priceCity);
+  const totalHargaBarang = hitungTotalHargaBarang(
+    priceBarang,
+    pajakSaja,
+    ongkirSaja,
+    diskonSaja
+  );
 
-  console.log(`${namaBarang} harga totalnya ${totalHargaBarang}`);
+  console.log(`${namaBarang} ${kategori} harga totalnya ${totalHargaBarang}`);
 });
+
+// Chalange
+// Pembagian diskon: Fashion diskon 40%, Games diskon 15%, Sport diskon 25%
+// selain itu diskon 5%
