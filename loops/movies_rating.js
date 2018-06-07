@@ -38,8 +38,12 @@ moviesData.map((data, idx) => {
   const title_movies = data.title;
   const rating_movies = data.rating;
   let stars = "";
-  for (let m = 0; m < rating_movies; m++) {
-    stars += " * ";
+  for (let m = 0; m < 5; m++) {
+    if (m < rating_movies) {
+      stars += " * ";
+    } else {
+      stars += " o ";
+    }
   }
   console.log(`${title_movies}  ${stars}`);
 });
