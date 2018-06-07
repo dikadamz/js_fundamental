@@ -31,7 +31,6 @@ const dataBarang = [
   }
 ];
 
-// Study case 4
 const hitungPajak = harga => {
   const totalHarga = harga * 0.15;
   return totalHarga;
@@ -40,7 +39,6 @@ const hitungPajak = harga => {
 const hitungOngkir = city => {
   // Jakarta 10000, Tangerang 15000, Bandung 20000, Bogor 17000
   let ongkir;
-
   if (city === "Jakarta") {
     ongkir = 10000;
   } else if (city === "Tangerang") {
@@ -55,10 +53,8 @@ const hitungOngkir = city => {
 };
 
 const hitungDiskon = (harga, category) => {
-  // Fashion diskon 40%, Games diskon 15%, Sport diskon 25%
-  // selain itu diskon 5%
+ 
   let hargaDenganDiskon;
-
   if (category === "Fashion") {
     hargaDenganDiskon = harga * 0.4;
   } else if (category === "Games") {
